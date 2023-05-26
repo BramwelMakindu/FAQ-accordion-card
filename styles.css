@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%)); 
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.container{
+    width: 900px;
+    background-color: white;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-position: 860% 65%;
+    background-repeat: no-repeat;
+}
+
+.picture-div{
+    height: 100%;
+    width: 45%;
+    background-image: url(images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 120% center;
+}
+
+.box{
+    position: absolute;
+    left: -93px;
+    top: 60%;
+    transform: translateY(-50%);
+    display: block;
+}
+
+.content-div{
+    width: 50%;
+}
+
+.content-div h1{
+    margin-bottom: 25px;
+}
+
+.accordion-div{
+    width: 85%;
+}
+
+.accordion{
+    width: 100%;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    padding-bottom: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.accordion-question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: hsl(240, 6%, 50%);
+}
+
+.accordion-question:hover{
+    color: hsl(14, 88%, 65%);
+}
+
+.accordion-question img{
+    width: 12px;
+    transition: transform .5s;
+}
+
+.accordion-answer{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.accordion-answer p{
+    font-size: 12px;
+    color: hsl(240, 6%, 50%);
+}
+
+.accordion.active .accordion-question{
+    color:  hsl(237, 12%, 33%);
+    font-weight: bold;
+}
+
+.accordion.active .accordion-question img{
+    transform: rotate(180deg);
+}
+
+.accordion.active .accordion-answer{
+    display: block;
+}
+
+.woman-img{
+    display: none;
+}
+
+/*-------small-screen-----*/
+
+@media screen and (max-width: 900px){
+    body{
+        padding-top: 40px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-position: center 2%;
+        position: relative;
+        padding-bottom: 20px;
+    }
+
+    .picture-div{
+        height: 40%;
+        background-image: none;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .woman-img{
+        display: block;
+        position: absolute;
+        width: 220px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -97px;
+    }
+
+    .box{
+        display: none;
+    }
+
+    .content-div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
